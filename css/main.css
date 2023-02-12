@@ -1,100 +1,8 @@
 body{
+   margin:0;
+   padding: 0;
    font-family: Arial, sans-serif;
 }
-.header{
-   max-width: 1500px;
-   margin: 30px auto 80px;
-}
-.header__menu-list{
-   margin:0;
-   padding:0;
-   display: flex;
-   justify-content: end;
-   gap:20px;
-   list-style-type: none;
-}
-.header__menu-item{
-   position: relative;
-   margin-left: 40px;
-}
-.header__menu-item::before{
-   content: "";
-   display: inline-block;
-   width:2px;
-   height: 100%;
-   background-color: #000;
-   position: absolute;
-   top:0;
-   left: 0;
-   transform: scale(0);
-   transition: transform 0.4s;
-}
-.header__menu-item::after{
-   content: "";
-   display: inline-block;
-   width:100%;
-   height: 2px;
-   background-color: #000;
-   position: absolute;
-   bottom:0;
-   left: 0;
-   transform: scale(0);
-   transition: transform 0.4s;
-}
-.header__menu-link--active{
-   color: gray !important;
-}
-.header__menu-item:hover::before{
-   transform: scale(1);
-}
-.header__menu-item:hover::after{
-   transform: scale(1);
-}
-.header__menu-link{
-   text-decoration: none;
-   color: #000;
-   font-size: 20px;
-   line-height: 32.5px;
-   padding:5px;
-   position: relative;
-}
-.header__menu-link::after{
-   content: "";
-   display: inline-block;
-   width:2px;
-   height: 100%;
-   background-color: #000;
-   position: absolute;
-   top:0;
-   right: 0;
-   transform: scale(0);
-   transition: transform 0.4s;
-}
-.header__menu-link::before{
-   content: "";
-   display: inline-block;
-   width:100%;
-   height: 2px;
-   background-color: #000;
-   position: absolute;
-   top:0;
-   right: 0;
-   transform: scale(0);
-   transition: transform 0.4s;
-}
-.header__menu-link--active::before,
-.header__menu-link--active::after,
-.header__menu-item--active::before,
-.header__menu-item--active::after{
-   display: none;
-}
-.header__menu-link:hover::after{
-   transform: scale(1);
-}
-.header__menu-link:hover::before{
-   transform: scale(1);
-}
-
 .main__about{
    display: flex;
    border-top:30px solid #C4C4C4;
@@ -139,31 +47,52 @@ body{
    position: absolute;
    border-radius: 50%;
    object-fit: cover;
+   transition: all 0.7s;
 }
-.main__posts{
-   background-color: #EDF7F9;
-   padding:20px 15% 80px;
+.main__about-image-container:hover .main__about-photo{
+   filter: brightness(0.6);
 }
-.main__posts-cards{
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   gap:20px;
+.main__about-social{
+   position: absolute;
+   text-align: center;
+   bottom: -10%;
+   left:50%;
+   transform: translateX(-50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.7s;
 }
-.main__posts-card{
-   flex: 1 1 300px;
-   background-color: #fff;
-   border-radius: 5px;
-   padding:10px;
+.main__about-social-link{
+   display: inline-block;
+   margin-right: 8px;
 }
-.card__title{
+.main__about-social-link:last-child{
+   margin-right: 0;
+}
+.main__about-image-container:hover .main__about-social{
+   bottom: 20%;
+   opacity: 1;
+   visibility: visible;
+}
+.main__about-social-img{
+   width:18px;
+   height: 18px;
+   filter: invert(1);
+
+}
+.main__article-link{
    font-size: 30px;
+   color:#000;
+   text-decoration: none;
+}
+.main__article-link:hover{
+   text-decoration: 2px underline ;
 }
 .main-works{
    margin:0 15% 80px;
 }
 .main__articles-container{
-   margin:0 15% 80px;
+   margin:30px 15% 80px;
 }
 .main__article{
    display: flex;
@@ -208,43 +137,4 @@ body{
    font-size: 18px;
    color:#C7CBCC;
    font-weight: 700;
-}
-.footer{
-   text-align: center;
-   margin-bottom: 40px;
-}
-.footer__social-block{
-   display: flex;
-   justify-content: center;
-   gap:20px;
-   margin-bottom: 20px;
-}
-.footer__social-link{
-   width:40px;
-   height: 40px;
-   background-image: url(../images/icons/sprite.png);
-}
-.social-link__fb{
-   background-position: 0 0;
-}
-.social-link__insta{
-   background-position: -40px 0;
-}
-.social-link__linkedin{
-   background-position: -80px 0;
-}
-.social-link__twitter{
-   background-position: -120px 0;
-}
-.social-link__fb:hover{
-   background-position: 0 40px;
-}
-.social-link__insta:hover{
-   background-position: -40px 40px;
-}
-.social-link__linkedin:hover{
-   background-position: -80px 40px;
-}
-.social-link__twitter:hover{
-   background-position: -120px 40px;
 }
